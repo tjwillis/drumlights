@@ -102,7 +102,8 @@ class TD9:
 
     def process_events(self):
         while self.events:
-            self.get_event().drum.callback()
+            event = self.get_event()
+            if event: event.drum.callback()
 
     def read(self):
         if self.midi_input.poll():
