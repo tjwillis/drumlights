@@ -1,7 +1,7 @@
 import pygame, pygame.midi
 
 # midi input device
-midi_input_name = 'Tbox 2X2'
+midi_input_name = 'USB Midi Cable MIDI 1'#'Tbox 2X2'
 midi_noteon_statuses = [i for i in range(144,160)]
 midi_noteoff_statuses = [i for i in range(128,144)]
 
