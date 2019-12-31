@@ -42,11 +42,13 @@ notenum_dict = {
 def get_midi_device_number(name):
     for device_number in range(pygame.midi.get_count()):
         device_info = pygame.midi.get_device_info(int(device_number))
-        if str(device_info[1]) == str(name) and device_info[2] == 1:
+        if device_info[1].decode() == name and device_info[2] == 1:
             return device_number
 
 def get_midi_input(name):
-    return pygame.midi.Input(get_midi_device_number(name))
+    midi_device_number = get_midi_device_number(name)
+    assert midi_device_number, 'Could not find a midi input to use...'
+    return pygame.midi.Input(midi_device_number)
 
 def foo(name,notenum):
     print('callback from {} ({})'.format(name,notenum))

@@ -63,7 +63,7 @@ class Drum:
         self.name, self.notenum = name, notenum
         self.callback = lambda: foo(self.name,self.notenum)
 
-class TD9:
+class TD17:
     def __init__(self):
         self.drums = []
         for notenum in notenum_dict:
@@ -119,5 +119,5 @@ class TD9:
             self.read()
 
 if __name__ == '__main__':
-    td9 = TD9()
-    td9.watch()
+    TD17 = td17()
+    td17.watch()
