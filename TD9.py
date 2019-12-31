@@ -42,7 +42,7 @@ notenum_dict = {
 def get_midi_device_number(name):
     for device_number in range(pygame.midi.get_count()):
         device_info = pygame.midi.get_device_info(int(device_number))
-        if device_info[1] == name and device_info[2] == 1:
+        if str(device_info[1]) == str(name) and device_info[2] == 1:
             return device_number
 
 def get_midi_input(name):
